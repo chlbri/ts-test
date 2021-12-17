@@ -1,13 +1,9 @@
-// #region Config
-
 import { ttest } from './functions';
 import { identityCompare } from './helpers';
 
 function func2(a: number) {
   return a ** 2;
 }
-
-// #endregion
 
 const func = ttest.skip({
   func: func2,

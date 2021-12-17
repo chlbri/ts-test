@@ -1,4 +1,4 @@
-import { isArray, isNullish } from 'core';
+import { isArray, isNullish } from '@core_chlbri/core';
 import { dequal } from 'dequal';
 import type { Compare } from '../types';
 

@@ -1,5 +1,3 @@
-// #region Config
-
 import { ttest } from './functions';
 import { identityCompare } from './helpers';
 
@@ -24,8 +22,6 @@ function throws(val: number) {
   }
   return val;
 }
-
-// #endregion
 
 describe('Func1', () => {
   ttest.concurrent({
@@ -66,7 +62,6 @@ describe('Func2', () => {
     compare: identityCompare,
   });
 });
-
 
 describe('Func3', () => {
   ttest.concurrent({

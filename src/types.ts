@@ -1,4 +1,9 @@
-import type { DeepPartial, LengthOf, Primitive, ThenArg } from 'core';
+import type {
+  DeepPartial,
+  LengthOf,
+  Primitive,
+  ThenArg,
+} from '@core_chlbri/core';
 
 export type NFunction<R = any, P extends any[] = any[]> = (
   ...args: P
