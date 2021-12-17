@@ -1,12 +1,11 @@
 {
   "name": "@core_chlbri/test",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "Test your usecases",
   "author": "chlbri <bri_lvi@icloud.com>",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "tsc": "tsc",
     "build": "pnpm run test && pnpm build:-test",
@@ -39,7 +38,6 @@
     "eslint": "^8.3.0",
     "fs-extra": "^10.0.0",
     "jest": "^27.3.1",
-    "nanoid": "^3.1.30",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
@@ -51,5 +49,10 @@
     "@core_chlbri/core": "^0.1.1-dc",
     "dequal": "^2.0.2",
     "nanoid": "^3.1.30"
+  },
+  "peerDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7"
   }
 }
