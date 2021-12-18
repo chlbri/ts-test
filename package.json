@@ -1,6 +1,6 @@
 {
   "name": "@core_chlbri/test",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Test your usecases",
   "author": "chlbri <bri_lvi@icloud.com>",
   "main": "dist/index.js",

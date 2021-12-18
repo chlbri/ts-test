@@ -77,6 +77,7 @@
     "test",
     "__test__",
     "src/**/*.test.ts",
+    "src/**/*.ttest.ts",
     "src/**/*.test.js",
     "src/__setupTests.ts",
     "src/__setupTests.js"
