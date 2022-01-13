@@ -45,7 +45,8 @@ describe('throws', () => {
         thrown: 2,
       },
 
-      { args: 3, throws: true },
+      { invite: 'Pour 3', args: 3, throws: true },
+      { invite: 'Pour 5', args: 5, expected: 5 },
       // { args: 5, throws: true },
     ],
   });

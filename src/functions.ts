@@ -9,46 +9,47 @@ export function mapperTest<F extends NFunction>({
 }: Mapper<F>): TestFunction<F> {
   return async test => {
     const _spy = spy as jest.Mock<Promise<any>>;
-    if (!test.throws) {
-      let _processed: any;
-      if (spy.length == 0) {
-        _processed = await _spy();
+    const _processed = async () => {
+      if (spy.length === 0) {
+        return await _spy();
       } else if (spy.length === 1) {
-        _processed = await _spy(test.args);
+        return await _spy(test.args);
       } else {
-        _processed = await _spy(...(test.args as any));
+        return await _spy(...(test.args as any[]));
       }
-      const assertion = compare(_processed, test.expected);
+    };
+    let falsePass = false;
+    try {
+      const processed = await _processed();
+      if (test.throws) {
+        console.log('not to thrown');
+        falsePass = true;
+        return expect(false).toBe(true);
+      }
+      const assertion = compare(processed, test.expected);
+      // #region Logs
       log('args', test.args);
       log('expected', test.expected);
       log('_processed', _processed);
       log('assertion', assertion);
-
+      // #endregion
       expect(assertion).toBeTruthy();
-    } else {
-      const _processed = async () => {
-        if (spy.length === 0) {
-          return await _spy();
-        } else if (spy.length === 1) {
-          return await _spy(test.args);
-        } else {
-          return await _spy(...(test.args as any));
-        }
-      };
-      // expect.assertions(1);
-      // expect(_processed()).rejects.toEqual(test)
-      try {
-        await _processed();
-      } catch (error) {
-        const thrown = test.thrown;
-        log('args', test.args);
-        log('thrown', thrown);
-        expect(error).toBeDefined();
-        thrown && expect(error).toEqual(thrown);
+    } catch (error: any) {
+      expect(error).toBeDefined();
+      if (!test.throws) {
+        return expect(false).toBe(true);
       }
+      if (falsePass) {
+        falsePass = false;
+        return expect(false).toBe(true);
+      }
+      const thrown = test.thrown;
+      // #region Logs
+      log('args', test.args);
+      log('thrown', error);
+      // #endregion
+      thrown && expect(error).toEqual(thrown);
     }
-
-    // expect(spy).toBeCalledWith(...args);
   };
 }
 
