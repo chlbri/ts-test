@@ -3,8 +3,6 @@
   "version": "0.0.13",
   "description": "Test your usecases",
   "author": "chlbri <bri_lvi@icloud.com>",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
