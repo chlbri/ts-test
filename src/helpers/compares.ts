@@ -1,6 +1,13 @@
-import { isArray, isNullish } from '@core_chlbri/core';
 import { dequal } from 'dequal';
 import type { Compare } from '../types';
+
+function isArray<T>(value: unknown): value is Array<T> {
+  return value instanceof Array;
+}
+
+function isNullish(val: unknown): val is undefined | null {
+  return val === null || val === undefined;
+}
 
 function _compareArray(arg1?: any[], arg2?: any[]) {
   if (isNullish(arg2) || isNullish(arg1)) {

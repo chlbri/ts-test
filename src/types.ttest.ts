@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { LengthOf } from '@core_chlbri/core';
-import { TestElement } from './types';
+import type { LengthOf } from '@bemedev/types';
+import type { TestElement } from './types';
 
 function func1(a: number) {
   return a;

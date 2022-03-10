@@ -1,7 +1,11 @@
-import { log, ThenArg } from '@core_chlbri/core';
+import { ThenArg } from '@bemedev/types';
 import { nanoid } from 'nanoid';
 import { dataCompare } from './helpers/compares';
 import type { Mapper, NFunction, TestFunction, TestProps } from './types';
+
+function log(text: string, arg: any) {
+  return console.log(text, '=>', arg);
+}
 
 export function mapperTest<F extends NFunction>({
   spy,
@@ -22,7 +26,6 @@ export function mapperTest<F extends NFunction>({
     try {
       const processed = await _processed();
       if (test.throws) {
-        console.log('not to thrown');
         falsePass = true;
         return expect(false).toBe(true);
       }

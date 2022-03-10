@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@core_chlbri/core': ^0.1.1-dc
+  '@bemedev/types': ^0.0.3
   '@types/edit-json-file': ^1.6.1
   '@types/faker': ^5.5.9
   '@types/fs-extra': ^9.0.13
@@ -22,7 +22,7 @@ specifiers:
   typescript: ^4.5.2
 
 dependencies:
-  '@core_chlbri/core': 0.1.1-dc
+  '@bemedev/types': 0.0.3
   dequal: 2.0.2
   nanoid: 3.1.30
 
@@ -369,12 +369,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@core_chlbri/core/0.1.1-dc:
-    resolution: {integrity: sha512-jW6WYspSmvtAyUD3ZhISO9/AvaGuOc7nO0jC3kY/u0k+cHwrlE+9A7gdZH0at2WLxif704mYoLYZw4xkIu7msQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      dequal: 2.0.2
-      nanoid: 3.1.30
+  /@bemedev/types/0.0.3:
+    resolution: {integrity: sha512-BqmF7WjsLI3U5nju6O5KvOVuQPiNiANR+wrc4DMFN0KpQsoD6f87qfcUhQphYUn/f+ZFs3ivelo83qFd/S8nsw==}
     dev: false
 
   /@eslint/eslintrc/1.0.5:

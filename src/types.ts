@@ -3,7 +3,7 @@ import type {
   LengthOf,
   Primitive,
   ThenArg,
-} from '@core_chlbri/core';
+} from '@bemedev/types';
 
 export type NFunction<R = any, P extends any[] = any[]> = (
   ...args: P

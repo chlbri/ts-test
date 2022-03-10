@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
 #For Libraries
+
 #
 ### Node ###
 # Logs
@@ -11,12 +12,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-.npm-debug.log*
-.pnpm-debug.log*
-.pnpm-error.log*
-.yarn-debug.log*
-.yarn-error.log*
-.lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -47,7 +42,9 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+build
+out
+dist
 
 # Dependency directories
 node_modules/
@@ -84,17 +81,15 @@ typings/
 .yarn-integrity
 yarn.lock
 
-# dotenv environment variables file
-.env
-.env.test
-.env*.local
-
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
 
 # Next.js build output
 .next
+
+# vercel
+.vercel
 
 # Nuxt.js build / generate output
 .nuxt
@@ -125,19 +120,45 @@ yarn.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
-# Mine
-wconfig/
-.eslintrc*.*
+# dotenv environment variables file
+.env
+.env.zsh
+.env.test
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.json
+.env.development.json
+.env.production.json
+.env.test.json
+.env.local.json
+.env.development.local.json
+.env.production.local.json
+.env.test.local.json
+
+#vscode
+.vscode
+
+# Library
+.gitpod-config
+
+#Apple
+**/.DS_Store
+
+#Protopie
+proto.pie
+
+# Settings
 .eslintignore
-.gitpod*
-.pnpm-debug.log
+.eslintrc.yml
+.gitpod.yml
 .prettierignore
-.prettierrc.*
+.prettierrc.yml
 jest.config.js
-pnpm-lock.yaml
 tsconfig.json
-wallaby.js
-dist
-src
-test
-__test__
+pnpm-lock.yaml
+tests
+build.npm.js
+gitpod.temp.yml
+globals.d.ts

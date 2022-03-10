@@ -135,5 +135,8 @@ yarn.lock
 .env.production.local.json
 .env.test.local.json
 
+#Apple
+**/.DS_Store
+
 #vscode
 .vscode
