@@ -14,7 +14,8 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx,yml,json}\"",
     "lint": "pnpm prettier && pnpm eslint -- --fix",
-    "jest:clear": "jest --clearCache"
+    "jest:clear": "jest --clearCache",
+    "prepublishOnly": "rm -rf lib && pnpm run tsc"
   },
   "devDependencies": {
     "@types/edit-json-file": "^1.6.1",
