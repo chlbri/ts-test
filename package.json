@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/test",
-  "version": "0.0.2",
+  "version": "0.0.2-beta",
   "description": "Test your usecases",
   "author": "chlbri <bri_lvi@icloud.com>",
   "main": "index.js",

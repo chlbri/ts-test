@@ -1,4 +1,4 @@
-import { ThenArg } from '@bemedev/types';
+import type { ThenArg } from '@bemedev/types';
 import { nanoid } from 'nanoid';
 import { dataCompare } from './helpers/compares';
 import type { Mapper, NFunction, TestFunction, TestProps } from './types';
