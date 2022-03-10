@@ -34,6 +34,7 @@
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "ts-jest": "^27.0.7",
+    "@bemedev/npm-publish": "^0.0.1-pnpm2",
     "typescript": "^4.5.2"
   },
   "repository": "https://github.com/chlbri/ts-test.git",
