@@ -1,1 +1,1 @@
-# https://github.com/chlbri/core-test.git
+# https://github.com/chlbri/ts-test.git
