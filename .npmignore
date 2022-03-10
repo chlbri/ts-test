@@ -160,5 +160,6 @@ tsconfig.json
 pnpm-lock.yaml
 tests
 build.npm.js
+build.npm.ts
 gitpod.temp.yml
 globals.d.ts
