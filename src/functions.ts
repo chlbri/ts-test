@@ -1,6 +1,6 @@
 import type { ThenArg } from '@bemedev/types';
 import { nanoid } from 'nanoid';
-import { shallowCompare } from './helpers/compares';
+import { dataCompare, shallowCompare } from './helpers/compares';
 import type { Mapper, NFunction, TestFunction, TestProps } from './types';
 
 function log(text: string, arg: any) {
@@ -59,7 +59,7 @@ export function mapperTest<F extends NFunction>({
 export const ttest = <F extends NFunction = NFunction>({
   func,
   tests,
-  compare = shallowCompare,
+  compare = dataCompare,
 }: TestProps<F>) => {
   const spy = jest.fn<ThenArg<ReturnType<F>>, Parameters<F>>(func);
   const mapper = mapperTest({ spy, compare });
