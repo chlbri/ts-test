@@ -1,1 +1,3 @@
-# https://github.com/chlbri/ts-test.git
+# @bemedev/test
+
+Default comparison : JSON.stringify(arg1) === JSON.stringify(arg2);
