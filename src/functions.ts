@@ -1,6 +1,6 @@
 import type { ThenArg } from '@bemedev/types';
 import { nanoid } from 'nanoid';
-import { dataCompare } from './helpers/compares';
+import { shallowCompare } from './helpers/compares';
 import type { Mapper, NFunction, TestFunction, TestProps } from './types';
 
 function log(text: string, arg: any) {
@@ -33,7 +33,7 @@ export function mapperTest<F extends NFunction>({
       // #region Logs
       log('args', test.args);
       log('expected', test.expected);
-      log('_processed', _processed);
+      log('processed', processed);
       log('assertion', assertion);
       // #endregion
       expect(assertion).toBeTruthy();
@@ -59,7 +59,7 @@ export function mapperTest<F extends NFunction>({
 export const ttest = <F extends NFunction = NFunction>({
   func,
   tests,
-  compare = dataCompare,
+  compare = shallowCompare,
 }: TestProps<F>) => {
   const spy = jest.fn<ThenArg<ReturnType<F>>, Parameters<F>>(func);
   const mapper = mapperTest({ spy, compare });
@@ -86,7 +86,7 @@ ttest.skip = <F extends NFunction = NFunction>({ func }: TestProps<F>) => {
 ttest.concurrent = <F extends NFunction = NFunction>({
   func,
   tests,
-  compare = dataCompare,
+  compare = shallowCompare,
 }: TestProps<F>) => {
   const spy = jest.fn<ThenArg<ReturnType<F>>, Parameters<F>>(func);
   const mapper = mapperTest({ spy, compare });
@@ -107,7 +107,7 @@ ttest.concurrent = <F extends NFunction = NFunction>({
 ttest.only = <F extends NFunction = NFunction>({
   func,
   tests,
-  compare = dataCompare,
+  compare = shallowCompare,
 }: TestProps<F>) => {
   const spy = jest.fn<ThenArg<ReturnType<F>>, Parameters<F>>(func);
   const mapper = mapperTest({ spy, compare });

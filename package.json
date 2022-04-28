@@ -18,6 +18,7 @@
     "prepublishOnly": "rm -rf lib && pnpm run tsc"
   },
   "devDependencies": {
+    "@bemedev/npm-publish": "^0.0.1-pnpm2",
     "@types/edit-json-file": "^1.6.1",
     "@types/faker": "^5.5.9",
     "@types/fs-extra": "^9.0.13",
@@ -25,7 +26,6 @@
     "@types/shelljs": "^0.8.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "dequal": "^2.0.2",
     "edit-json-file": "^1.6.2",
     "eslint": "^8.3.0",
     "fs-extra": "^10.0.0",
@@ -34,13 +34,11 @@
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "ts-jest": "^27.0.7",
-    "@bemedev/npm-publish": "^0.0.1-pnpm2",
     "typescript": "^4.5.2"
   },
   "repository": "https://github.com/chlbri/ts-test.git",
   "dependencies": {
     "@bemedev/types": "^0.0.3",
-    "dequal": "^2.0.2",
     "nanoid": "^3.1.30"
   },
   "peerDependencies": {
