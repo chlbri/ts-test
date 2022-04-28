@@ -10,7 +10,6 @@ specifiers:
   '@types/shelljs': ^0.8.9
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
-  dequal: ^2.0.2
   edit-json-file: ^1.6.2
   eslint: ^8.3.0
   fs-extra: ^10.0.0
@@ -24,7 +23,6 @@ specifiers:
 
 dependencies:
   '@bemedev/types': 0.0.3
-  dequal: 2.0.2
   nanoid: 3.1.30
 
 devDependencies:
@@ -1295,11 +1293,6 @@ packages:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=}
     engines: {node: '>=0.4.0'}
     dev: true
-
-  /dequal/2.0.2:
-    resolution: {integrity: sha512-q9K8BlJVxK7hQYqa6XISGmBZbtQQWVXSrRrWreHC94rMt1QL/Impruc+7p2CYSYuVIUr+YCt6hjrs1kkdJRTug==}
-    engines: {node: '>=6'}
-    dev: false
 
   /detect-newline/3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}

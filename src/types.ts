@@ -49,15 +49,17 @@ export type CompareFromFunction<F extends NFunction = NFunction> = Compare<
   ThenArg<ReturnType<F>>
 >;
 
-export type DeepExpected<T> = DeepPartial<
-  T extends {
-    [key: string]: infer U;
-  }
-    ? U extends Primitive
-      ? U
-      : DeepExpected<U>
-    : Record<string, never>
->;
+export type DeepExpected<T> =
+  | DeepPartial<
+      T extends {
+        [key: string]: infer U;
+      }
+        ? U extends Primitive
+          ? U | Und
+          : DeepExpected<U>
+        : Record<string, never> | Und
+    >
+  | Partial<Record<keyof T, Und>>;
 
 export type ThenArgFromFunction<F extends NFunction = NFunction> = ThenArg<
   ReturnType<F>
@@ -91,3 +93,21 @@ export type TestProps<F extends NFunction = NFunction> = {
 };
 
 export type TestTable<F extends NFunction> = TestElement<F>[];
+
+class Und {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  private constructor() {}
+
+  static #instance: Und;
+
+  readonly value = undefined;
+
+  static getInstance(): Und {
+    if (!Und.#instance) {
+      Und.#instance = new Und();
+    }
+    return Und.#instance;
+  }
+}
+
+export const UND = Und.getInstance();

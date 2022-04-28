@@ -1,5 +1,6 @@
 import { ttest } from './functions';
-import { identityCompare } from './helpers';
+import { identityCompare, shallowCompare } from './helpers';
+import { UND } from './types';
 
 function func1(a: number, b: number) {
   return a + b;
@@ -11,6 +12,11 @@ function func2(a: number) {
 
 function func3() {
   return 1;
+}
+
+function func4(d?: unknown) {
+  const check = d === UND;
+  return check ? undefined : { a: 1, b: 'two', c: true, d };
 }
 
 function throws(val: number) {
@@ -69,5 +75,19 @@ describe('Func3', () => {
     func: func3,
     tests: [{ expected: 1 }, { expected: 1 }, { expected: 1 }],
     compare: identityCompare,
+  });
+});
+
+describe('Func4', () => {
+  ttest({
+    func: func4,
+    tests: [
+      { expected: { d: UND } },
+      { args: 4, expected: { c: true } },
+      { expected: UND, args: UND },
+      { args: UND },
+      {},
+    ],
+    compare: shallowCompare,
   });
 });
