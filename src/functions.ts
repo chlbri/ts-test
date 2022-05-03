@@ -1,14 +1,6 @@
-import { JestTest } from './types';
-import { dataCompare } from './helpers/compares';
-import { mapperJest } from './helpers/mappers';
-import {
-  JestFunction,
-  Mapper,
-  NFunction,
-  TestFunction,
-  TestProps,
-  TEST_ERROR,
-} from './types';
+import { TEST_ERROR } from './constants';
+import { dataCompare, mapperTests } from './helpers';
+import { Mapper, NFunction, TestFunction, TestProps } from './types';
 
 function log(text: string, arg: any) {
   return console.log(text, '=>', arg);
@@ -70,85 +62,39 @@ export const ttest = <F extends NFunction = NFunction>({
   func,
   tests,
   compare = dataCompare,
+  timeout,
 }: TestProps<F>) => {
-  const spy = jest.fn(func) as JestFunction<F>;
-  const mapper = mapperTest({ spy, compare });
-  tests.map((test, iterator) => {
-    const weight = test.weight ?? 1;
-    const _test: JestTest = {
-      ...test,
-      iterator,
-      weight,
-    };
-    const invite = mapperJest(_test);
-    // const id = nanoid();
-    let assertion = true;
-    it(invite, async () => {
-      assertion = await mapper(test);
-    });
-    return { assertion, weight };
-  });
-  return spy;
+  return mapperTests<F>(func, compare, tests, it, timeout);
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-ttest.skip = <F extends NFunction = NFunction>({ func }: TestProps<F>) => {
-  const spy = jest.fn(func) as JestFunction<F>;
-  return spy;
+ttest.skip = <F extends NFunction = NFunction>({
+  func,
+  tests,
+  compare = dataCompare,
+  timeout,
+}: TestProps<F>) => {
+  return mapperTests<F>(func, compare, tests, it.skip, timeout);
 };
 
-ttest.todo = <F extends NFunction = NFunction>(
-  todo: string,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  _?: TestProps<F>,
-) => {
-  return todo;
+ttest.todo = (todo: string) => {
+  return it.todo(todo);
 };
 
 ttest.concurrent = <F extends NFunction = NFunction>({
   func,
   tests,
   compare = dataCompare,
+  timeout,
 }: TestProps<F>) => {
-  const spy = jest.fn(func) as JestFunction<F>;
-  const mapper = mapperTest({ spy, compare });
-  tests.forEach((test, iterator) => {
-    const weight = test.weight ?? 1;
-    const _test: JestTest = {
-      ...test,
-      iterator,
-      weight,
-    };
-    const invite = mapperJest(_test);
-    let assertion = true;
-    it.concurrent(invite, async () => {
-      assertion = await mapper(test);
-    });
-    return { assertion, weight };
-  });
-  return spy;
+  return mapperTests<F>(func, compare, tests, it.concurrent, timeout);
 };
 
 ttest.only = <F extends NFunction = NFunction>({
   func,
   tests,
   compare = dataCompare,
+  timeout,
 }: TestProps<F>) => {
-  const spy = jest.fn(func) as JestFunction<F>;
-  const mapper = mapperTest({ spy, compare });
-  tests.forEach((test, iterator) => {
-    const weight = test.weight ?? 1;
-    const _test: JestTest = {
-      ...test,
-      iterator,
-      weight,
-    };
-    const invite = mapperJest(_test);
-    let assertion = true;
-    it.only(invite, async () => {
-      assertion = await mapper(test);
-    });
-    return { assertion, weight };
-  });
-  return spy;
+  return mapperTests<F>(func, compare, tests, it.only, timeout);
 };

@@ -1,4 +1,5 @@
-import { Compare, UND } from '../types';
+import { UND } from '../constants';
+import { Compare } from '../types';
 
 function isArray<T>(value: unknown): value is Array<T> {
   return value instanceof Array;

@@ -5,6 +5,7 @@ import type {
   Primitive,
   ThenArg,
 } from '@bemedev/types';
+import { UND } from './constants';
 
 export type NFunction<R = any, P extends any[] = any[]> = (
   ...args: P
@@ -44,7 +45,7 @@ export type TestElement<F extends NFunction> = (LengthOf<
     invite: string;
     compare?: CompareFromFunction<F>;
     weight?: TestWeight;
-    context: string;
+    timeout?: number;
   };
 
 export type Compare<T = any> = NFunction<
@@ -97,19 +98,11 @@ export type TestProps<F extends NFunction = NFunction> = {
   func: F;
   tests: TestElement<F>[];
   compare?: CompareFromFunction<F>;
+  timeout?: number;
 };
 
 export type TestTable<F extends NFunction> = TestElement<F>[];
 
-export const UND = {
-  value: undefined,
-  x_type: 'und',
-} as const;
-
-export const TEST_ERROR = {
-  value: undefined,
-  x_type: 'error',
-} as const;
 
 type Und = typeof UND;
 
@@ -185,8 +178,8 @@ export type Achievement = AchievementTest | AchievementGroup;
 export type ExplodeGroupBanksReturn = [number, number[]][];
 
 export type JestTest = {
-  weight: TestWeight;
-  invite: string;
+  weight?: TestWeight;
+  invite?: string;
   iterator: number;
   context?: string;
 };
