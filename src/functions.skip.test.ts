@@ -5,16 +5,16 @@ function func2(a: number) {
   return a ** 2;
 }
 
-const func = ttest.skip({
+const spy = ttest.skip({
   func: func2,
   tests: [
-    { args: 4, expected: 16 },
-    { args: 5, expected: 25 },
-    { args: 7, expected: 49 },
+    { args: 4, expected: 16, invite: '#1', context: 'skip' },
+    { args: 5, expected: 25, invite: '#2', context: 'skip' },
+    { args: 7, expected: 49, invite: '#3', context: 'skip' },
   ],
   compare: identityCompare,
 });
 
 it('Skip not call', () => {
-  expect(func).toBeCalledTimes(0);
+  expect(spy).not.toHaveBeenCalled();
 });

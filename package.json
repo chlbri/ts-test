@@ -15,10 +15,13 @@
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx,yml,json}\"",
     "lint": "pnpm prettier && pnpm eslint -- --fix",
     "jest:clear": "jest --clearCache",
+    "build-reporter": "tsc --project tsconfig.report.json --watch",
     "prepublishOnly": "rm -rf lib && pnpm run tsc"
   },
   "devDependencies": {
     "@bemedev/npm-publish": "^0.0.1-pnpm2",
+    "@jest/reporters": "^28.0.3",
+    "@jest/test-result": "^28.0.2",
     "@types/edit-json-file": "^1.6.1",
     "@types/faker": "^5.5.9",
     "@types/fs-extra": "^9.0.13",

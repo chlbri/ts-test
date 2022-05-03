@@ -4,19 +4,23 @@ function isArray<T>(value: unknown): value is Array<T> {
   return value instanceof Array;
 }
 
-function isNullish(val: unknown): val is undefined | null {
-  return val === null || val === undefined;
+function isNullish(value: unknown): value is undefined | null {
+  return value === null || value === undefined;
 }
 
-function _shallowCompareArray(arg1?: any[], arg2?: any[]) {
-  if (isNullish(arg2) || isNullish(arg1)) {
+function isObject(...args: any[]): boolean {
+  return args.every(arg => typeof arg === 'object');
+}
+
+function _shallowCompareArray(array1?: any[], array2?: any[]) {
+  if (isNullish(array2) || isNullish(array1)) {
     return true;
   }
-  if (arg2.length > arg1.length) return false;
+  if (array2.length > array1.length) return false;
   let out = true;
-  for (let index = 0; index < arg2.length; index++) {
-    const el1 = arg1[index];
-    const el2 = arg2[index];
+  for (let index = 0; index < array2.length; index++) {
+    const el1 = array1[index];
+    const el2 = array2[index];
     out = _shallowCompare(el1, el2);
     if (!out) {
       break;
@@ -25,8 +29,8 @@ function _shallowCompareArray(arg1?: any[], arg2?: any[]) {
   return out;
 }
 
-function _reduce(arg: object, ...keys: string[]) {
-  return Object.entries({ ...arg })
+function _reduce(obj: object, ...keys: string[]) {
+  return Object.entries({ ...obj })
     .filter(([key]) => {
       const len = keys.length;
       const check = len > 0;
@@ -37,10 +41,6 @@ function _reduce(arg: object, ...keys: string[]) {
       prev[key] = value;
       return prev;
     }, {} as any);
-}
-
-function isObject(...args: any[]): boolean {
-  return args.every(arg => typeof arg === 'object');
 }
 
 function _shallowCompare(arg1: any, arg2: any): boolean {
@@ -89,17 +89,20 @@ function _shallowCompare(arg1: any, arg2: any): boolean {
 }
 
 export function shallowCompare<T = any>(
-  ...[arg1, arg2]: Parameters<Compare<T>>
+  ...[processed, expected]: Parameters<Compare<T>>
 ): ReturnType<Compare<T>> {
-  return _shallowCompare(arg1, arg2);
+  return _shallowCompare(processed, expected);
 }
 
 export function dataCompare<T = any>(
-  ...[arg1, arg2]: Parameters<Compare<T>>
+  ...[processed, expected]: Parameters<Compare<T>>
 ): ReturnType<Compare<T>> {
-  return JSON.stringify(arg1) === JSON.stringify(arg2);
+  return JSON.stringify(processed) === JSON.stringify(expected);
 }
 
-export function identityCompare<T = any>(arg1: T, arg2: T): boolean {
-  return arg1 === arg2;
+export function identityCompare<T = any>(
+  processed: T,
+  expected: T,
+): boolean {
+  return processed === expected;
 }

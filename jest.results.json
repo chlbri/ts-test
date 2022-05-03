@@ -1,0 +1,635 @@
+[
+  {
+    "leaks": false,
+    "numFailingTests": 0,
+    "numPassingTests": 1,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "openHandles": [],
+    "perfStats": {
+      "end": 1651503040128,
+      "runtime": 1411,
+      "slow": false,
+      "start": 1651503038717
+    },
+    "skipped": false,
+    "snapshot": {
+      "added": 0,
+      "fileDeleted": false,
+      "matched": 0,
+      "unchecked": 0,
+      "uncheckedKeys": [],
+      "unmatched": 0,
+      "updated": 0
+    },
+    "testFilePath": "/Users/chlbri/Documents/github/NODE JS/Libraries-bemedev/ts-test/src/functions.skip.test.ts",
+    "testResults": [
+      {
+        "ancestorTitles": [],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Skip not call",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Skip not call"
+      }
+    ],
+    "failureMessage": null
+  },
+  {
+    "leaks": false,
+    "numFailingTests": 0,
+    "numPassingTests": 11,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "openHandles": [],
+    "perfStats": {
+      "end": 1651503040170,
+      "runtime": 1457,
+      "slow": false,
+      "start": 1651503038713
+    },
+    "skipped": false,
+    "snapshot": {
+      "added": 0,
+      "fileDeleted": false,
+      "matched": 0,
+      "unchecked": 0,
+      "uncheckedKeys": [],
+      "unmatched": 0,
+      "updated": 0
+    },
+    "testFilePath": "/Users/chlbri/Documents/github/NODE JS/Libraries-bemedev/ts-test/src/functions.concurrent.test.ts",
+    "testResults": [
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "throws"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "throws Pour 2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Pour 2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "throws"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "throws Pour 3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Pour 3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      }
+    ],
+    "failureMessage": null
+  },
+  {
+    "leaks": false,
+    "numFailingTests": 0,
+    "numPassingTests": 3,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "openHandles": [],
+    "perfStats": {
+      "end": 1651503040223,
+      "runtime": 1510,
+      "slow": false,
+      "start": 1651503038713
+    },
+    "skipped": false,
+    "snapshot": {
+      "added": 0,
+      "fileDeleted": false,
+      "matched": 0,
+      "unchecked": 0,
+      "uncheckedKeys": [],
+      "unmatched": 0,
+      "updated": 0
+    },
+    "testFilePath": "/Users/chlbri/Documents/github/NODE JS/Libraries-bemedev/ts-test/src/functions.only.test.ts",
+    "testResults": [
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      }
+    ],
+    "failureMessage": null
+  },
+  {
+    "leaks": false,
+    "numFailingTests": 0,
+    "numPassingTests": 22,
+    "numPendingTests": 0,
+    "numTodoTests": 0,
+    "openHandles": [],
+    "perfStats": {
+      "end": 1651503040334,
+      "runtime": 1621,
+      "slow": false,
+      "start": 1651503038713
+    },
+    "skipped": false,
+    "snapshot": {
+      "added": 0,
+      "fileDeleted": false,
+      "matched": 0,
+      "unchecked": 0,
+      "uncheckedKeys": [],
+      "unmatched": 0,
+      "updated": 0
+    },
+    "testFilePath": "/Users/chlbri/Documents/github/NODE JS/Libraries-bemedev/ts-test/src/functions.test.ts",
+    "testResults": [
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func1"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func1 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "throws"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "throws Pour 2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Pour 2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "throws"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "throws Pour 3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Pour 3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "throws"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "throws Pour 5 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "Pour 5 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func2"
+        ],
+        "duration": 1,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func2 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func3"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func3 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 #4 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#4 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 #5 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#5 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4",
+          "Name of the group"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 Name of the group #1 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#1 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4",
+          "Name of the group"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 Name of the group #2 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#2 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4",
+          "Name of the group"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 Name of the group #3 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#3 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4",
+          "Name of the group"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 Name of the group #4 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#4 =>"
+      },
+      {
+        "ancestorTitles": [
+          "Func4",
+          "Name of the group"
+        ],
+        "duration": 0,
+        "failureDetails": [],
+        "failureMessages": [],
+        "fullName": "Func4 Name of the group #5 =>",
+        "invocations": 1,
+        "location": null,
+        "numPassingAsserts": 0,
+        "status": "passed",
+        "title": "#5 =>"
+      }
+    ],
+    "failureMessage": null
+  }
+]

@@ -1,6 +1,7 @@
 import type {
   DeepPartial,
   LengthOf,
+  NOmit,
   Primitive,
   ThenArg,
 } from '@bemedev/types';
@@ -32,17 +33,23 @@ export type TestElement<F extends NFunction> = (LengthOf<
     }
   : {
       args: Parameters<F>;
-    }) & { invite?: string } & (
+    }) &
+  (
     | {
         throws?: false;
         expected?: ExpectedFromFunction<F>;
       }
     | { throws: true; thrown?: any }
-  );
+  ) & {
+    invite: string;
+    compare?: CompareFromFunction<F>;
+    weight?: TestWeight;
+    context: string;
+  };
 
 export type Compare<T = any> = NFunction<
   boolean,
-  [arg1: T, arg2?: Expected<T>]
+  [actual: T, expected?: Expected<T>]
 >;
 
 export type CompareFromFunction<F extends NFunction = NFunction> = Compare<
@@ -75,13 +82,13 @@ export type TE<F extends NFunction> = TestElement<F>;
 
 export type TestFunction<F extends NFunction> = (
   arg: TestElement<F>,
-) => Promise<void>;
+) => Promise<boolean>;
 
-export type JestMockFromFunction<F extends NFunction = NFunction> =
-  jest.Mock<ThenArgFromFunction<F>, Parameters<F>>;
+// export type JestMockFromFunction<F extends NFunction = NFunction> =
+//   jest.Mock<ThenArgFromFunction<F>, Parameters<F>>;
 
 export type Mapper<F extends NFunction> = {
-  spy: JestMockFromFunction<F>;
+  spy: JestFunction<F>;
   uuid?: boolean;
   compare: CompareFromFunction<F>;
 };
@@ -94,20 +101,121 @@ export type TestProps<F extends NFunction = NFunction> = {
 
 export type TestTable<F extends NFunction> = TestElement<F>[];
 
-class Und {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  private constructor() {}
+export const UND = {
+  value: undefined,
+  x_type: 'und',
+} as const;
 
-  static #instance: Und;
+export const TEST_ERROR = {
+  value: undefined,
+  x_type: 'error',
+} as const;
 
-  readonly value = undefined;
+type Und = typeof UND;
 
-  static getInstance(): Und {
-    if (!Und.#instance) {
-      Und.#instance = new Und();
-    }
-    return Und.#instance;
-  }
-}
+export type TestWeight = 1 | 2 | 3 | 4 | 5;
 
-export const UND = Und.getInstance();
+export type TestState =
+  | 'passed'
+  | 'failed'
+  | 'skipped'
+  | 'pending'
+  | 'todo'
+  | 'disabled';
+
+export type CommonTest = {
+  weight: TestWeight;
+  invite: string;
+};
+
+export type JestFunction<F extends NFunction> = jest.Mock<
+  ThenArgFromFunction<F>,
+  Parameters<F>
+>;
+
+export type TestResult = {
+  state: TestState;
+  weight: TestWeight;
+  invite: string;
+  parent?: string;
+};
+export type TestResultWithID = TestResult & {
+  ID: number;
+};
+
+export type GroupResult = {
+  invite: string;
+  weight: TestWeight;
+  parent?: string;
+};
+
+export type GroupResultWithID = GroupResult & {
+  ID: number;
+};
+
+export type GroupWithResults = GroupResultWithID & {
+  tests: number[];
+  groups: number[];
+};
+
+export type GroupWithResultsAndRank = GroupWithResults & {
+  rank: number; // Start from 1, integer only
+};
+
+export type GroupWeighted = NOmit<GroupResultWithID, 'weight'> & {
+  rank: number; // Start from 1, integer only
+  tests: number[];
+  weight: number;
+  groups: number[];
+};
+
+export type AchievementTest = {
+  invite: string;
+  weight: TestWeight;
+  state: TestState;
+  context?: string;
+};
+
+export type AchievementGroup = NOmit<AchievementTest, 'state'> & {
+  state: number; //Between 1 and 0
+};
+
+export type Achievement = AchievementTest | AchievementGroup;
+
+export type ExplodeGroupBanksReturn = [number, number[]][];
+
+export type JestTest = {
+  weight: TestWeight;
+  invite: string;
+  iterator: number;
+  context?: string;
+};
+type AssertionResult = {
+  ancestorTitles: Array<string>;
+  duration?: number | null;
+  failureDetails: Array<unknown>;
+  failureMessages: Array<string>;
+  numPassingAsserts: number;
+  retryReasons?: Array<string>;
+  status: TestState;
+  title: string;
+};
+
+export type ReducerToAchieve = (test: AssertionResult) => AchievementTest;
+
+export type Context = {
+  label: string;
+  weight: number;
+  parent?: string;
+  rank?: number;
+  totalTests?: string[];
+  failedTests?: string[];
+  passedTests?: string[];
+  skippedTests?: string[];
+  pendingTests?: string[];
+  todoTests?: string[];
+  disabledTests?: string[];
+  children?: Record<string, Context>;
+};
+
+export type ContextJSON = Context | Record<string, Context> | undefined;

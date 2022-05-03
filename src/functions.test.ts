@@ -33,9 +33,9 @@ describe('Func1', () => {
   ttest({
     func: func1,
     tests: [
-      { args: [18, 42], expected: 60 },
-      { args: [15, 35], expected: 50 },
-      { args: [95, 5], expected: 100 },
+      { args: [18, 42], expected: 60, invite: '#1', context: 'normal' },
+      { args: [15, 35], expected: 50, invite: '#2', context: 'normal' },
+      { args: [95, 5], expected: 100, invite: '#3', context: 'normal' },
     ],
   });
 });
@@ -49,10 +49,11 @@ describe('throws', () => {
         args: 2,
         throws: true,
         thrown: 2,
+        context: 'normal',
       },
 
-      { invite: 'Pour 3', args: 3, throws: true },
-      { invite: 'Pour 5', args: 5, expected: 5 },
+      { invite: 'Pour 3', args: 3, throws: true, context: 'normal' },
+      { invite: 'Pour 5', args: 5, expected: 5, context: 'normal' },
       // { args: 5, throws: true },
     ],
   });
@@ -62,9 +63,9 @@ describe('Func2', () => {
   ttest({
     func: func2,
     tests: [
-      { args: 4, expected: 16 },
-      { args: 5, expected: 25 },
-      { args: 7, expected: 49 },
+      { args: 4, expected: 16, invite: '#1', context: 'normal' },
+      { args: 5, expected: 25, invite: '#2', context: 'normal' },
+      { args: 7, expected: 49, invite: '#3', context: 'normal' },
     ],
     compare: identityCompare,
   });
@@ -73,7 +74,11 @@ describe('Func2', () => {
 describe('Func3', () => {
   ttest({
     func: func3,
-    tests: [{ expected: 1 }, { expected: 1 }, { expected: 1 }],
+    tests: [
+      { expected: 1, invite: '#1', context: 'normal' },
+      { expected: 1, invite: '#2', context: 'normal' },
+      { expected: 1, invite: '#3', context: 'normal' },
+    ],
     compare: identityCompare,
   });
 });
@@ -82,12 +87,30 @@ describe('Func4', () => {
   ttest({
     func: func4,
     tests: [
-      { expected: { d: UND } },
-      { args: 4, expected: { c: true } },
-      { expected: UND, args: UND },
-      { args: UND },
-      {},
+      { expected: { d: UND }, invite: '#1', context: 'normal' },
+      { args: 4, expected: { c: true }, invite: '#2', context: 'normal' },
+      { expected: UND, args: UND, invite: '#3', context: 'normal' },
+      { args: UND, invite: '#4', context: 'normal' },
+      { invite: '#5', context: 'normal' },
     ],
     compare: shallowCompare,
+  });
+  describe('Name of the group', () => {
+    ttest({
+      func: func4,
+      tests: [
+        { expected: { d: UND }, invite: '#1', context: 'normal' },
+        {
+          args: 4,
+          expected: { c: true },
+          invite: '#2',
+          context: 'normal',
+        },
+        { expected: UND, args: UND, invite: '#3', context: 'normal' },
+        { args: UND, invite: '#4', context: 'normal' },
+        { invite: '#5', context: 'normal' },
+      ],
+      compare: shallowCompare,
+    });
   });
 });
