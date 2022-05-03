@@ -325,7 +325,10 @@ export default class CustomReporter
 
     COLLECTOR.computeJSON();
 
-    console.log('reporter : ', JSON.stringify(COLLECTOR.json, null, 2));
+    return console.log(
+      'reporter : ',
+      JSON.stringify(COLLECTOR.json, null, 2),
+    );
     // console.log('config', Array.from(configs.values())[0].moduleMap);
   }
 
