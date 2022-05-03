@@ -1,5 +1,5 @@
 {
-  "include": ["src", ".reporter.ts"],
+  "include": ["src"],
   // "files": ["globals.d.ts"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
@@ -77,7 +77,7 @@
     "test",
     "__test__",
     "src/**/*.test.ts",
-    "src/**/*.ttest.ts",
+    "src/**/*.test-d.ts",
     "src/**/*.test.js",
     "src/__setupTests.ts",
     "src/__setupTests.js"

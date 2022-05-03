@@ -103,7 +103,6 @@ export type TestProps<F extends NFunction = NFunction> = {
 
 export type TestTable<F extends NFunction> = TestElement<F>[];
 
-
 type Und = typeof UND;
 
 export type TestWeight = 1 | 2 | 3 | 4 | 5;

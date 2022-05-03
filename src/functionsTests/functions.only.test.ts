@@ -1,5 +1,5 @@
-import { ttest } from './functions';
-import { identityCompare } from './helpers';
+import { ttest } from '../functions';
+import { identityCompare } from '../helpers';
 
 function func3() {
   return 1;

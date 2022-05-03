@@ -4,7 +4,7 @@
   "description": "Test your usecases",
   "author": "chlbri <bri_lvi@icloud.com>",
   "main": "index.js",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
