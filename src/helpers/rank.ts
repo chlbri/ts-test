@@ -2,4 +2,7 @@ import { exec } from 'shelljs';
 
 // let messageT = '';
 
-exec('npm run test -- --silent', { async: true, fatal: true });
+exec('pnpm run test -- --config "./jest.config.custom.js"', {
+  async: true,
+  // fatal: true,
+});

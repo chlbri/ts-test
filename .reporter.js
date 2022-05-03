@@ -186,7 +186,7 @@ class Collector {
 const COLLECTOR = Collector.getInstance();
 const DELIMITER_CONTEXT = '.';
 class CustomReporter {
-    async onRunComplete(_, results) {
+    async onRunComplete(configs, results) {
         // TODO Add Slack webhook trigger
         const tests = results.testResults
             .map(group => {
@@ -212,6 +212,7 @@ class CustomReporter {
         COLLECTOR.computeContexts();
         COLLECTOR.computeJSON();
         console.log('reporter : ', JSON.stringify(COLLECTOR.json, null, 2));
+        // console.log('config', Array.from(configs.values())[0].moduleMap);
     }
     async onTestCaseResult(test, testResult) {
         // console.log('result : ', testResult);

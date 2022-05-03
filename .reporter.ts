@@ -287,7 +287,10 @@ const DELIMITER_CONTEXT = '.' as const;
 export default class CustomReporter
   implements Pick<Reporter, 'onRunComplete' | 'onTestCaseResult'>
 {
-  async onRunComplete(_: Set<TestContext>, results: AggregatedResult) {
+  async onRunComplete(
+    configs: Set<TestContext>,
+    results: AggregatedResult,
+  ) {
     // TODO Add Slack webhook trigger
     const tests = results.testResults
       .map(group => {
@@ -323,6 +326,7 @@ export default class CustomReporter
     COLLECTOR.computeJSON();
 
     console.log('reporter : ', JSON.stringify(COLLECTOR.json, null, 2));
+    // console.log('config', Array.from(configs.values())[0].moduleMap);
   }
 
   async onTestCaseResult(test: Test, testResult: TestCaseResult) {
